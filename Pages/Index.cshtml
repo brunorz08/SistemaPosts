@@ -1,0 +1,20 @@
+﻿@page
+@model SistemaPosts.Pages.IndexModel
+@{
+	<a href="Nuevo"><button>Nuevo registro</button></a>
+	<hr>
+	
+	var listado = Model.lista.obtenerTodos();
+
+	foreach(var item in listado){
+		<div>
+		<p>ID: @item.id</p>
+		<p>Titulo: @item.titulo</p>
+		<p>Contenido: @item.contenido</p>
+		<p>Usuario: @item.usuario</p>
+		<a href="Borrar?id=@item.id">Borrar</a>
+		<hr>
+		</div>
+
+	}
+}
